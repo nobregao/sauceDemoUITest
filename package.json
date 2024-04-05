@@ -1,0 +1,20 @@
+{
+  "name": "saucedemouitest",
+  "version": "1.0.0",
+  "description": "Testes Automatizados de Interface Gráfica / UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "test",
+    "ui",
+    "cypress",
+    "xpeducacao"
+  ],
+  "author": "Bárbara Cabral",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.11.0"
+  }
+}
