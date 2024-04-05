@@ -16,12 +16,14 @@ jobs:
         run: npm install
   
   execute:
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
       - name: execute cypress
         run: npx cypress run
   
   reports:
+    needs: execute
     runs-on: ubuntu-latest
     steps:
       - name: generate screenshots
