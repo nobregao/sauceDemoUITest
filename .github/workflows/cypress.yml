@@ -20,5 +20,5 @@ jobs:
         uses: actions/upload-artifact@v4
         if: failure()
         with: 
-          name: Mocha reports Cypress tests
-          path: screenshots
+          name: screenshots
+          path: cypress/screenshots
