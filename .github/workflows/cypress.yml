@@ -16,9 +16,15 @@ jobs:
         run: npm install        
       - name: execute cypress
         run: npx cypress run
-      - name: generate reports
+      - name: generate screenshots
         uses: actions/upload-artifact@v4
         if: failure()
         with: 
           name: screenshots
           path: cypress/screenshots
+      - name: generate videos
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with: 
+          name: videos
+          path: cypress/videos
