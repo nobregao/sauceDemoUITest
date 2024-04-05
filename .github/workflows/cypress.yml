@@ -24,7 +24,7 @@ jobs:
           path: cypress/screenshots
       - name: generate videos
         uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with: 
           name: videos
           path: cypress/videos
