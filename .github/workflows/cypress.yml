@@ -16,4 +16,8 @@ jobs:
         run: npm install        
       - name: execute cypress
         run: npx cypress run
-        
+      - name: generate reports
+        uses: actions/upload-artifact@v2
+        with: 
+          name: Mocha reports Cypress tests
+          path: screenshot
