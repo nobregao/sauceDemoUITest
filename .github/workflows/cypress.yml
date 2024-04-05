@@ -7,12 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: setup node
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '14'
-      - run: npm install        
+      - name: install dependencies
+        run: npm install        
       - name: execute cypress
-      - run: npx cypress run
+        run: npx cypress run
         
