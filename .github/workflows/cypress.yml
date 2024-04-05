@@ -22,7 +22,7 @@ jobs:
       - name: execute cypress
         run: npx cypress run
   
-  reports:
+  reports-screenshots:
     needs: execute
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +32,11 @@ jobs:
         with: 
           name: screenshots
           path: cypress/screenshots
+
+  reports-videos:
+    needs: execute
+    runs-on: ubuntu-latest
+    steps:
       - name: generate videos
         uses: actions/upload-artifact@v4
         if: always()
