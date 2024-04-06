@@ -5,7 +5,7 @@ module.exports = {
     },
     assert: {
       assertions: {
-        "categories:accessibility": ["error", {"minScore": 80}]
+        "categories:accessibility": ["error", {"minScore": 0.80}]
       }
     },
     upload: {
