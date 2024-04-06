@@ -19,11 +19,6 @@ jobs:
           node-version: '14'
       - name: install dependencies
         run: npm install
-  
-  execute:
-    needs: dependencies
-    runs-on: ubuntu-latest
-    steps:
       - name: execute cypress
         run: npx cypress run
       - name: generate screenshots
