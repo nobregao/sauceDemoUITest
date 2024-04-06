@@ -28,3 +28,7 @@ jobs:
         with: 
           name: videos
           path: cypress/videos
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.13.x
+          lhci autorun
