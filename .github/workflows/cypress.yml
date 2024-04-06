@@ -6,28 +6,37 @@ jobs:
   execute-cypress:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: setup node
-        uses: actions/setup-node@v4
+      # - name: checkout
+      #   uses: actions/checkout@v4
+      # - name: setup node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '14'
+      # - name: install dependencies
+      #   run: npm install
+      # - name: execute cypress
+      #   run: npx cypress run
+      # - name: generate screenshots
+      #   uses: actions/upload-artifact@v4
+      #   if: failure()
+      #   with: 
+      #     name: screenshots
+      #     path: cypress/screenshots
+      # - name: generate videos
+      #   uses: actions/upload-artifact@v4
+      #   if: always()
+      #   with: 
+      #     name: videos
+      #     path: cypress/videos
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
-      - name: install dependencies
-        run: npm install
-      - name: execute cypress
-        run: npx cypress run
-      - name: generate screenshots
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with: 
-          name: screenshots
-          path: cypress/screenshots
-      - name: generate videos
-        uses: actions/upload-artifact@v4
-        if: always()
-        with: 
-          name: videos
-          path: cypress/videos
+          node-version: 16.x
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.13.x
