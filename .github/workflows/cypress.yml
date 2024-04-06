@@ -3,7 +3,7 @@ name: Checkout
 on: [push]
 
 jobs:
-  checkout:
+  execute-cypress:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
