@@ -1,4 +1,4 @@
-name: Checkout
+name: cypress-ci
 
 on: [push]
 
