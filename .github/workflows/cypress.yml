@@ -36,6 +36,10 @@ jobs:
       # - name: npm install, build
       #   run: |
       #     npm install
+  
+  execute-lighthouse:
+    runs-on: ubuntu-latest
+    steps:
       - name: run lighthouse ci
         run: |
           npm install -g @lhci/cli@0.13.x
