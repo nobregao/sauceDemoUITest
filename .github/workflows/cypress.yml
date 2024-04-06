@@ -36,7 +36,6 @@ jobs:
       - name: npm install, build
         run: |
           npm install
-          npm run build
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.13.x
