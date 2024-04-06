@@ -11,7 +11,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: 14.x
       - name: install dependencies
         run: npm install
       - name: execute cypress
@@ -28,18 +28,17 @@ jobs:
         with: 
           name: videos
           path: cypress/videos
-      # - uses: actions/checkout@v3
-      # - name: Use Node.js 16.x
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16.x
-      # - name: npm install, build
-      #   run: |
-      #     npm install
   
   execute-lighthouse:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16.x
+      - name: npm install, build
+        run: npm install
       - name: run lighthouse ci
         run: |
           npm install -g @lhci/cli@0.13.x
