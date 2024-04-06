@@ -1,0 +1,23 @@
+name: lighthouse-ci
+
+on: [push]
+
+jobs:
+  # execute:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Use Node.js 16.x
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16.x
+  #     - name: npm install, build
+  #       run: |
+  #         npm install
+  execute-lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run lighthouse ci
+        run: |
+          npm install -g @lhci/cli@0.13.x
+          lhci autorun
